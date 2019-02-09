@@ -10,8 +10,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -22,14 +20,59 @@ import java.util.stream.Stream;
 public class Cajero {
     private List<Cuenta> cuentas;
     private String file;
+    private Cuenta cuentaActiva;
     
     public Cajero(){
         this.cuentas = new ArrayList<>();
     }
     
+    public boolean ingresar(int numeroCuenta){
+        Cuenta cuenta = this.obtenerCuenta(numeroCuenta);
+        if(cuenta!=null){
+            this.cuentaActiva = cuenta;
+            return true;
+        }
+        return false;
+    }
+    
+    public void salir() throws IOException{
+        this.guardar();
+        this.cuentaActiva = null;
+    }
+    
+    public Cuenta getCuentaActiva() {
+        return cuentaActiva;
+    }
+
+    public void setCuentaActiva(Cuenta cuentaActiva) {
+        this.cuentaActiva = cuentaActiva;
+    }
+    
+   
     public Cajero(String fileName){
         this.file = fileName;
         this.cuentas = new ArrayList<>();
+    }
+    
+    public boolean abonarCuenta(double dinero){
+        if(this.cuentaActiva !=null){
+            this.cuentaActiva.ingresarEfectivo(dinero);
+        }
+        return false;
+    }
+    
+    public boolean retirarCuenta(double dinero){
+         if(this.cuentaActiva !=null){
+            return this.cuentaActiva.retirarEfectivo(dinero);
+        }
+        return false;
+    }
+    
+    public double verSaldo(){
+         if(this.cuentaActiva !=null){
+            return this.cuentaActiva.getSaldo();
+        }
+        return 0.00;
     }
     
     public Cuenta obtenerCuenta(int numeroCuenta){

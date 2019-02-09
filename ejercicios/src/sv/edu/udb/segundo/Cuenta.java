@@ -48,6 +48,7 @@ public class Cuenta {
         this.saldo = saldo;
     }
     
+    @Override
     public String toString(){
         return String.valueOf(this.id)+","+String.valueOf(this.saldo);
     }
