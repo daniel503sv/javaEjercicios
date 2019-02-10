@@ -56,7 +56,7 @@ public class Cajero {
     
     public boolean abonarCuenta(double dinero){
         if(this.cuentaActiva !=null){
-            this.cuentaActiva.ingresarEfectivo(dinero);
+           return this.cuentaActiva.ingresarEfectivo(dinero);
         }
         return false;
     }
@@ -73,6 +73,27 @@ public class Cajero {
             return this.cuentaActiva.getSaldo();
         }
         return 0.00;
+    }
+    
+    public int verNumeroCuenta(){
+         if(this.cuentaActiva !=null){
+            return this.cuentaActiva.getId();
+        }
+        return 0;
+    }
+    
+    public int transferenciaCuenta(Cuenta cuentaAbonar,double dinero){
+        
+        if(cuentaAbonar == null){
+            return -1; //cuenta no existe
+        }
+        if(this.verSaldo() < dinero){
+            return 0; //insuficientes fondos
+        }
+ 
+        this.retirarCuenta(dinero);
+        cuentaAbonar.ingresarEfectivo(dinero);
+        return 1;//transaccion completada
     }
     
     public Cuenta obtenerCuenta(int numeroCuenta){

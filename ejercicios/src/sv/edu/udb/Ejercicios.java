@@ -6,6 +6,7 @@
 package sv.edu.udb;
 
 import javax.swing.JOptionPane;
+import sv.edu.udb.segundo.Segundo;
 
 /**
  *
@@ -16,17 +17,18 @@ public class Ejercicios {
     public static void main(String[] args) {
         int seleccion = 0;
         do {
-            seleccion= JOptionPane.showOptionDialog(null, "Seleccione una operacion", "seleccion", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, OPCIONES, OPCIONES[0]);
+            seleccion= JOptionPane.showOptionDialog(null, "Seleccione un ejercicio a evaluar", "seleccion", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, OPCIONES, OPCIONES[0]);
             switch(seleccion){
                 case -1:
                     JOptionPane.showMessageDialog(null, "Seleccione una operacion valida");
                     break;
                 case 0:
-                    JOptionPane.showMessageDialog(null, "Gracias por usar la calculadora");
+                    JOptionPane.showMessageDialog(null, "Gracias por completar la revision");
                     break;
                 case 1://ejercicio 1
                     break;
                 case 2://ejercicio 2
+                    Segundo.main(args);
                     break;
                 case 3://ejercicio 3
                     break;            
