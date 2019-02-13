@@ -1,18 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sv.edu.udb.tercero;
 
-/**
- *
- * @author Toshiba
- */
+/*Integrantes: 
+*              Jose Chinchilla
+*              Oscar Aragón
+*              Rafael Lara
+*              Daniel Choriego
+*/
 public class MaterialAudiovisual extends Material {
 
     private String duracion;
     private String genero;
+    
+    //Constructor de la clase
+    public MaterialAudiovisual(String codigo, String titulo, String duracion, String genero){
+        
+        super(codigo,titulo);
+        this.duracion = duracion;
+        this.genero = genero;
+    }
     
     public String getDuracion() {
         return duracion;
@@ -28,6 +33,10 @@ public class MaterialAudiovisual extends Material {
 
     public void setGenero(String genero) {
         this.genero = genero;
-    }
+    }    
+    
+    public void listarMateriales(){
+    
+    }    
     
 }

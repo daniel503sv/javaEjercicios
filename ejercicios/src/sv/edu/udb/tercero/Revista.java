@@ -1,18 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package sv.edu.udb.tercero;
 
-/**
- *
- * @author Toshiba
- */
+/*Integrantes: 
+*              Jose Chinchilla
+*              Oscar Aragón
+*              Rafael Lara
+*              Daniel Choriego
+*/
 public class Revista extends MaterialEscrito{
 
     private String periodicidad;
     private String fechaPub;
+    
+    //Constructor de Revista
+    public Revista(String codigo,String titulo,String editorial, int unidades,String periodicidad,String fechaPub){
+    super(codigo,titulo,editorial,unidades);
+    this.periodicidad = periodicidad;
+    this.fechaPub = fechaPub;
+    }
     
     public String getPeriodicidad() {
         return periodicidad;
@@ -29,5 +34,7 @@ public class Revista extends MaterialEscrito{
     public void setFechaPub(String fechaPub) {
         this.fechaPub = fechaPub;
     }
+    public void listarMateriales(){
     
+    }
 }

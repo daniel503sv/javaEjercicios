@@ -1,19 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sv.edu.udb.tercero;
 
-/**
- *
- * @author Toshiba
- */
+/*Integrantes: 
+*              Jose Chinchilla
+*              Oscar Aragón
+*              Rafael Lara
+*              Daniel Choriego
+*/
 public class CD extends MaterialAudiovisual{
 
     private String artista;
     private int numCanciones;
     private int unidades;
+    
+    //Constructor de la clase CD
+    public CD(String codigo,String titulo,String duracion,String genero,String artista,int numCanciones,int unidades){
+    super(codigo,titulo,duracion,genero);
+    this.artista = artista;
+    this.numCanciones = numCanciones;
+    this.unidades = unidades;
+    }
     
     public String getArtista() {
         return artista;
@@ -37,6 +42,10 @@ public class CD extends MaterialAudiovisual{
 
     public void setUnidades(int unidades) {
         this.unidades = unidades;
+    }
+    
+    public void listarMateriales(){
+    
     }
     
 }

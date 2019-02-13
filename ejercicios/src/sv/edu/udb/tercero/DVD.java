@@ -1,24 +1,32 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package sv.edu.udb.tercero;
 
-/**
- *
- * @author Toshiba
- */
+/*Integrantes: 
+*              Jose Chinchilla
+*              Oscar Aragón
+*              Rafael Lara
+*              Daniel Choriego
+*/
 public class DVD extends MaterialAudiovisual{
 
     private String director;
     
+    //Constructor de la clase DVD
+    public DVD(String codigo,String titulo,String duracion, String genero,String director){
+        super(codigo,titulo,duracion,genero);
+        this.director = director;
+        
+    }
     public String getDirector() {
         return director;
     }
 
     public void setDirector(String director) {
         this.director = director;
+    }
+    
+    public void listarMateriales(){
+    
     }
     
     
