@@ -1,22 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package sv.edu.udb.tercero;
 
-/**
- *
- * @author Toshiba
- */
+/*Integrantes: 
+*              Jose Chinchilla
+*              Oscar Aragón
+*              Rafael Lara
+*              Daniel Choriego
+*/
 public class MaterialEscrito extends Material {
  
     private String editorial;
     private int unidades;
     
     //Constructor
-    public MaterialEscrito(){
-        
+    public MaterialEscrito(String codigo,String titulo,String editorial,int unidades){
+        super(codigo,titulo);
+        this.editorial = editorial;
+        this.unidades = unidades;
     }
     
     //setters y getters
@@ -34,5 +34,9 @@ public class MaterialEscrito extends Material {
     
     public void setUnidades(int unidades) {
         this.unidades = unidades;
+    }
+    
+    public void listarMateriales(){
+    
     }
 }
