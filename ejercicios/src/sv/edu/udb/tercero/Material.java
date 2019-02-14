@@ -1,22 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package sv.edu.udb.tercero;
 
-/**
- *
- * @author Toshiba
- */
-public class Material {
+/*Integrantes: 
+*              Jose Chinchilla
+*              Oscar Aragón
+*              Rafael Lara
+*              Daniel Choriego
+*/
+
+ public abstract class Material {
 
     
     private String codigo;
     private String titulo;
     
-    //Constructor
-    public Material(){
+    //Constructor con parametros
+    public Material(String codigo, String titulo){
+       
+        this.codigo = codigo;
+        this.titulo = titulo;
         
     }
     
@@ -41,16 +43,14 @@ public class Material {
     }
     
     public void agregarMaterial(){
-        
+    
     }
     
     public void modificarMaterial(){
         
     }
     
-    public void listarMateriales(){
-        
-    }
+    public abstract void listarMateriales();
     
     public void borrarMaterial(){
         
