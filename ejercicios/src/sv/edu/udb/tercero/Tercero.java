@@ -38,9 +38,12 @@ public class Tercero {
                     mediateca.ingresarNuevoMaterial();
                     break;
                 case 2:
-                    
+                    mediateca.listar();
                     break;
                 case 3:
+                    
+                    break;
+                case 4:
                     
                     break;
             }

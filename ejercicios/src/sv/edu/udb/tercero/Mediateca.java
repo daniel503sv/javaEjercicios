@@ -12,6 +12,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import javax.swing.JOptionPane;
 import javax.xml.bind.JAXB;
@@ -231,13 +232,7 @@ public class Mediateca {
          
          switch(tipoMaterial){
              case 0:
-                 String titulo = this.ingresarTexto("titulo");
-                 String editorial = this.ingresarTexto("editorial");
-                 String autor = this.ingresarTexto("autor");
-                 String isbn = this.ingresarTexto("isbn");
-                 int unidades = this.ingresarNumero("unidades");
-                 int paginas = this.ingresarNumero("paginas");
-                 this.ingresarNuevoLibro(titulo, editorial, unidades, autor, paginas, isbn, paginas);
+                 this.ingresarLibro();
                  break;
              case 1:
                  
@@ -261,8 +256,31 @@ public class Mediateca {
         return Integer.parseInt(JOptionPane.showInputDialog("Ingrese el "+llave));
     }
     
-    public void listar(){
-       
+    private void ingresarLibro(){
+           String titulo = this.ingresarTexto("titulo");
+                 String editorial = this.ingresarTexto("editorial");
+                 String autor = this.ingresarTexto("autor");
+                 String isbn = this.ingresarTexto("isbn");
+                 int unidades = this.ingresarNumero("unidades");
+                 int paginas = this.ingresarNumero("paginas");
+                 this.ingresarNuevoLibro(titulo, editorial, unidades, autor, paginas, isbn, paginas);
+
+    }
     
+    public void mostrar(){
+        //Material material = this.buscarMaterial(this.)
+    }
+    
+    public void listar(){
+         String nl = System.getProperty("line.separator");
+         String libros = this.inventario.obtenerLibros().stream().map(e->e.toString()).collect(Collectors.joining(nl));
+         String revistas = this.inventario.obtenerRevistas().stream().map(e->e.toString()).collect(Collectors.joining(nl));
+         String discos = this.inventario.obtenerCds().stream().map(e->e.toString()).collect(Collectors.joining(nl));
+         String dvds = this.inventario.obtenerDvds().stream().map(e->e.toString()).collect(Collectors.joining(nl));
+    
+         JOptionPane.showMessageDialog(null, "Libros" + nl +libros);
+         JOptionPane.showMessageDialog(null, "Revistas" + nl +revistas);
+         JOptionPane.showMessageDialog(null, "CDA" + nl +discos);
+         JOptionPane.showMessageDialog(null, "DVDS" + nl +dvds);
     }
 }
