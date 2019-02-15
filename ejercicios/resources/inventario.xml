@@ -2,16 +2,6 @@
 <inventario>
     <libros>
         <libro>
-            <codigo>LIB00000</codigo>
-            <titulo>titulo libro</titulo>
-            <editorial>editorial libro</editorial>
-            <unidades>25</unidades>
-            <anhoPub>1999</anhoPub>
-            <autor>autor</autor>
-            <isbn>ISBN?</isbn>
-            <numPaginas>500</numPaginas>
-        </libro>
-        <libro>
             <codigo>LIB00001</codigo>
             <titulo>titulo libro 2</titulo>
             <editorial>editorial libro 2</editorial>
@@ -121,9 +111,49 @@
             <isbn>ISBN?</isbn>
             <numPaginas>500</numPaginas>
         </libro>
+        <libro>
+            <codigo>LIB00012</codigo>
+            <titulo>titulo libro</titulo>
+            <editorial>editorial libro</editorial>
+            <unidades>25</unidades>
+            <anhoPub>1999</anhoPub>
+            <autor>autor</autor>
+            <isbn>ISBN?</isbn>
+            <numPaginas>500</numPaginas>
+        </libro>
+        <libro>
+            <codigo>LIB00013</codigo>
+            <titulo>titulo libro 2</titulo>
+            <editorial>editorial libro 2</editorial>
+            <unidades>25</unidades>
+            <anhoPub>1999</anhoPub>
+            <autor>autor 2</autor>
+            <isbn>ISBN?</isbn>
+            <numPaginas>500</numPaginas>
+        </libro>
+        <libro>
+            <codigo>LIB00014</codigo>
+            <titulo>titulo libro</titulo>
+            <editorial>editorial libro</editorial>
+            <unidades>25</unidades>
+            <anhoPub>1999</anhoPub>
+            <autor>autor</autor>
+            <isbn>ISBN?</isbn>
+            <numPaginas>500</numPaginas>
+        </libro>
+        <libro>
+            <codigo>LIB00015</codigo>
+            <titulo>titulo libro 2</titulo>
+            <editorial>editorial libro 2</editorial>
+            <unidades>25</unidades>
+            <anhoPub>1999</anhoPub>
+            <autor>autor 2</autor>
+            <isbn>ISBN?</isbn>
+            <numPaginas>500</numPaginas>
+        </libro>
     </libros>
     <revistas/>
     <cds/>
     <dvds/>
-    <numeroCorrelativo>12</numeroCorrelativo>
+    <numeroCorrelativo>16</numeroCorrelativo>
 </inventario>

@@ -13,6 +13,11 @@ package sv.edu.udb.tercero;
     
     private String codigo;
     private String titulo;
+
+    @Override
+    public String toString() {
+        return "codigo=" + codigo + ", titulo=" + titulo;
+    }
     
     public static final String LIBRO = "LIBRO";
     public static final String REVISTA = "REVISTA";

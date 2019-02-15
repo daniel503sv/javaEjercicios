@@ -75,6 +75,31 @@ public class Inventario {
       
         this.libros.add(libro);
     }
+    public void ingresarNuevaRevista(String titulo,String editorial, int unidades,String periodicidad,String fechaPub){
+        Revista revista = new Revista(
+                "REV"+String.format ("%05d", this.numeroCorrelativo++),
+                 titulo,editorial,unidades,periodicidad,fechaPub
+                );
+      
+        this.revistas.add(revista);
+    }
+    
+     public void ingresarNuevoCd(String titulo,String duracion,String genero,String artista,int numCanciones,int unidades){
+        CD cd = new CD(
+                "CDA"+String.format ("%05d", this.numeroCorrelativo++),
+                 titulo,duracion,genero,artista,numCanciones,unidades
+                );
+      
+        this.cds.add(cd);
+    }
+     public void ingresarNuevoDvd(String titulo,String duracion, String genero,String director){
+        DVD dvd = new DVD(
+                "CDA"+String.format ("%05d", this.numeroCorrelativo++),
+                 titulo,duracion,genero,director
+                );
+      
+        this.dvds.add(dvd);
+    }
     public void ingresarNuevaRevista(Revista revista){
         revista.setCodigo( "LIB"+String.format ("{%05d}", this.numeroCorrelativo++));
         this.revistas.add(revista);

@@ -14,6 +14,11 @@ public class MaterialAudiovisual extends Material {
     public MaterialAudiovisual(){
         super();
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + " duracion=" + duracion + ", genero=" + genero;
+    }
     
     //Constructor de la clase
     public MaterialAudiovisual(String codigo, String titulo, String duracion, String genero){

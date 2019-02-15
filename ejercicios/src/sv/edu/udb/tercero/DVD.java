@@ -12,6 +12,12 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "dvd")
 public class DVD extends MaterialAudiovisual{
 
+    @Override
+    public String toString() {
+        return super.toString() + " director=" + director;
+    }
+
+    
     private String director;
     private static final String TIPO = Material.DVD;
 

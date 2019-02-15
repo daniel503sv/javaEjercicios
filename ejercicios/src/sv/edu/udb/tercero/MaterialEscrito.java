@@ -10,6 +10,11 @@ package sv.edu.udb.tercero;
 public class MaterialEscrito extends Material {
  
     private String editorial;
+
+    @Override
+    public String toString() {
+        return super.toString() + " editorial=" + editorial + ", unidades=" + unidades;
+    }
     private int unidades;
     
     public MaterialEscrito(){

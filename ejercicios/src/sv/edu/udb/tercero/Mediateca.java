@@ -13,6 +13,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
+import javax.swing.JOptionPane;
 import javax.xml.bind.JAXB;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -23,6 +24,8 @@ import javax.xml.bind.Marshaller;
  * @author josed
  */
 public class Mediateca {
+
+    private static final String[] MATERIALES = {"LIBRO","REVISTA","DVD","CD"};
 
     private Inventario inventario;
     
@@ -62,6 +65,19 @@ public class Mediateca {
        this.inventario.ingresarNuevoLibro(titulo, editorial, unidades, autor, numPaginas, ISBN, anioPub);
    }
     
+   public void ingresarNuevaRevista(String titulo,String editorial, int unidades,String periodicidad,String fechaPub){
+       this.inventario.ingresarNuevaRevista(titulo,editorial, unidades,periodicidad,fechaPub);
+   }
+   
+   public void ingresarNuevoCd(String titulo,String duracion,String genero,String artista,int numCanciones,int unidades){
+       this.inventario.ingresarNuevoCd(titulo,duracion,genero,artista,numCanciones,unidades);
+   }
+   
+   public void ingresarNuevoDvd(String titulo,String duracion, String genero,String director){
+     this.inventario.ingresarNuevoDvd(titulo,duracion,genero,director);
+   }
+   
+   
     
     public boolean agregarMaterial(Material material){
         return this.agregarMaterial(material.getTIPO(), material);
@@ -88,7 +104,6 @@ public class Mediateca {
     }
     
     public Material buscarMaterial(String codigo){
-        Material material = null;
         String tipo = codigo.toUpperCase().substring(0,3);
         switch(tipo){
             case "LIB":
@@ -120,7 +135,46 @@ public class Mediateca {
                 }
                 break;
         }
-        return material;
+        return null;
+    }
+    
+    public boolean borrarMaterial(String codigo){
+        String tipo = codigo.toUpperCase().substring(0,3);
+        switch(tipo){
+            case "LIB":
+                for(Libro libro:inventario.obtenerLibros()){
+                    if(libro.getCodigo().equalsIgnoreCase(codigo)){
+                       inventario.obtenerLibros().remove(libro);
+                       return true;
+                    }
+                }
+                break;
+            case "REV":
+                for(Revista revista:inventario.obtenerRevistas()){
+                    if(revista.getCodigo().equalsIgnoreCase(codigo)){
+                       inventario.obtenerRevistas().remove(revista);
+                       return true;
+                    }
+                }
+                break;
+            case "CDA":
+                for(CD cd:inventario.obtenerCds()){
+                    if(cd.getCodigo().equalsIgnoreCase(codigo)){
+                       inventario.obtenerCds().remove(cd);
+                       return true;
+                    }
+                }
+                break;
+            case "DVD":
+                for(DVD dvd:inventario.obtenerDvds()){
+                    if(dvd.getCodigo().equalsIgnoreCase(codigo)){
+                       inventario.obtenerDvds().remove(dvd);
+                       return true;
+                    }
+                }
+                break;
+        }
+        return false;
     }
     
      public void guardar() throws IOException{
@@ -166,5 +220,49 @@ public class Mediateca {
             System.out.println(e);
             return "";
         }
+    }
+    
+     public void ingresarNuevoMaterial(){
+         int tipoMaterial = JOptionPane.showOptionDialog(null, "Que tipo de material ingresara"
+                      , "CAJERO", JOptionPane.INFORMATION_MESSAGE, JOptionPane.DEFAULT_OPTION
+                      , null, MATERIALES, MATERIALES[0]);
+         
+         
+         
+         switch(tipoMaterial){
+             case 0:
+                 String titulo = this.ingresarTexto("titulo");
+                 String editorial = this.ingresarTexto("editorial");
+                 String autor = this.ingresarTexto("autor");
+                 String isbn = this.ingresarTexto("isbn");
+                 int unidades = this.ingresarNumero("unidades");
+                 int paginas = this.ingresarNumero("paginas");
+                 this.ingresarNuevoLibro(titulo, editorial, unidades, autor, paginas, isbn, paginas);
+                 break;
+             case 1:
+                 
+                 break;
+                 
+             case 2:
+                 
+                 break;
+                 
+             case 3:
+                 
+                 break;
+         }
+    }
+     
+         
+    private String ingresarTexto(String llave){
+        return JOptionPane.showInputDialog("Ingrese el "+llave);
+    }
+    private int ingresarNumero(String llave){
+        return Integer.parseInt(JOptionPane.showInputDialog("Ingrese el "+llave));
+    }
+    
+    public void listar(){
+       
+    
     }
 }

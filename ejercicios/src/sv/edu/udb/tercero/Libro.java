@@ -16,7 +16,7 @@ public class Libro extends MaterialEscrito{
 
     @Override
     public String toString() {
-        return "Libro{" + "autor=" + autor + ", numPaginas=" + numPaginas + ", isbn=" + isbn + ", anhoPub=" + anhoPub + '}';
+        return super.toString() + " autor=" + autor + ", numPaginas=" + numPaginas + ", isbn=" + isbn + ", anhoPub=" + anhoPub;
     }
     private int numPaginas;
     private String isbn;

@@ -11,6 +11,12 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "cd")
 public class CD extends MaterialAudiovisual{
 
+    @Override
+    public String toString() {
+        return super.toString() + " artista=" + artista + ", numCanciones=" + numCanciones + ", unidades=" + unidades;
+    }
+
+    
     private String artista;
     private int numCanciones;
     private int unidades;
@@ -51,9 +57,6 @@ public class CD extends MaterialAudiovisual{
     public void setUnidades(int unidades) {
         this.unidades = unidades;
     }
-    
-    public void listarMateriales(){
-    
-    }
+
     
 }
