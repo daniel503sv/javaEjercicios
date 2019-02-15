@@ -35,6 +35,20 @@ public class Mediateca {
 
     }
     
+    public Material crearMaterial(String tipo){
+          switch(tipo.toUpperCase()){
+            case Material.CD:
+                return inventario.obtenerCds();
+            case Material.DVD:
+                return inventario.obtenerDvds();
+            case Material.LIBRO:
+                return inventario.obtenerLibros();
+            case Material.REVISTA:
+                return inventario.obtenerRevistas();
+            default:
+                return null; //retorna una lista vacia si no encuentra el tipo de material
+        }
+    }
     public Inventario obtenerInventario() {
         return this.inventario;
     }
@@ -57,6 +71,9 @@ public class Mediateca {
                 return new ArrayList<>(); //retorna una lista vacia si no encuentra el tipo de material
         }
     }
+    
+    
+    
     public boolean agregarMaterial(Material material){
         return this.agregarMaterial(material.getTIPO(), material);
     }
