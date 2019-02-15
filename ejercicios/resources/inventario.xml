@@ -153,7 +153,25 @@
         </libro>
     </libros>
     <revistas/>
-    <cds/>
-    <dvds/>
-    <numeroCorrelativo>17</numeroCorrelativo>
+    <cds>
+        <cd>
+            <codigo>CDA00018</codigo>
+            <titulo>Fiesta tropical</titulo>
+            <duracion>80 min</duracion>
+            <genero>Latino</genero>
+            <artista>Varios</artista>
+            <numCanciones>19</numCanciones>
+            <unidades>750</unidades>
+        </cd>
+    </cds>
+    <dvds>
+        <dvd>
+            <codigo>DVD00017</codigo>
+            <titulo>Jumanji</titulo>
+            <duracion>75</duracion>
+            <genero>Aventura</genero>
+            <director>Jack</director>
+        </dvd>
+    </dvds>
+    <numeroCorrelativo>19</numeroCorrelativo>
 </inventario>

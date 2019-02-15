@@ -94,14 +94,14 @@ public class Inventario {
     }
      public void ingresarNuevoDvd(String titulo,String duracion, String genero,String director){
         DVD dvd = new DVD(
-                "CDA"+String.format ("%05d", this.numeroCorrelativo++),
+                "DVD"+String.format ("%05d", this.numeroCorrelativo++),
                  titulo,duracion,genero,director
                 );
       
         this.dvds.add(dvd);
     }
     public void ingresarNuevaRevista(Revista revista){
-        revista.setCodigo( "LIB"+String.format ("{%05d}", this.numeroCorrelativo++));
+        revista.setCodigo( "REV"+String.format ("{%05d}", this.numeroCorrelativo++));
         this.revistas.add(revista);
     }
     public void ingresarNuevoCd(CD cd){
@@ -109,7 +109,7 @@ public class Inventario {
         this.cds.add(cd);
     }
     public void ingresarNuevoDvd(DVD dvd){
-        dvd.setCodigo( "LIB"+String.format ("{%05d}", this.numeroCorrelativo++));
+        dvd.setCodigo( "DVD"+String.format ("{%05d}", this.numeroCorrelativo++));
         this.dvds.add(dvd);
     }
 

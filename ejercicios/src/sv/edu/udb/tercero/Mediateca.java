@@ -320,7 +320,7 @@ public class Mediateca {
     
          JOptionPane.showMessageDialog(null, "Libros" + nl +libros);
          JOptionPane.showMessageDialog(null, "Revistas" + nl +revistas);
-         JOptionPane.showMessageDialog(null, "CDA" + nl +discos);
          JOptionPane.showMessageDialog(null, "DVDS" + nl +dvds);
+         JOptionPane.showMessageDialog(null, "CDA" + nl +discos);
     }
 }
