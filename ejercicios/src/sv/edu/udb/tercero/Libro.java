@@ -1,13 +1,15 @@
 
 package sv.edu.udb.tercero;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /*Integrantes: 
 *              Jose Chinchilla
 *              Oscar Aragón
 *              Rafael Lara
 *              Daniel Choriego
 */
-
+@XmlRootElement(name = "libro")
 public class Libro extends MaterialEscrito{
 
     private String autor;
@@ -15,6 +17,9 @@ public class Libro extends MaterialEscrito{
     private String isbn;
     private int anhoPub;
     
+    public Libro(){
+        super();
+    }
     //Constructor de Libro
     public Libro(String codigo,String titulo,String editorial,int unidades,String autor,int numPaginas, String ISBN, int anioPub){
         super(codigo,titulo,editorial,unidades);

@@ -20,17 +20,19 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class Inventario {
-    @XmlElementWrapper(name="libros")
-    @XmlElement(name="libro")
+    
+  // XmLElementWrapper generates a wrapper element around XML representation
+    @XmlElementWrapper(name = "libros") 
+    @XmlElement(name = "libro")
     private List<Libro> libros;
-    @XmlElementWrapper(name="revistas")
-    @XmlElement(name="revista")
+    @XmlElementWrapper(name = "revistas") 
+    @XmlElement(name = "revista")
     private List<Revista> revistas;
-    @XmlElementWrapper(name="cds")
-    @XmlElement(name="cd")
+    @XmlElementWrapper(name = "cds") 
+    @XmlElement(name = "cd")
     private List<CD> cds;
-    @XmlElementWrapper(name="dvds")
-    @XmlElement(name="dvd")
+    @XmlElementWrapper(name = "dvds") 
+    @XmlElement(name = "dvd")
     private List<DVD> dvds;
    
     public Inventario(){
@@ -42,35 +44,35 @@ public class Inventario {
 
     }
 
-    public List<Libro> getLibros() {
+    public List<Libro> obtenerLibros() {
         return libros;
     }
 
-    public void setLibros(List<Libro> libros) {
+    public void ingresarLibros(List<Libro> libros) {
         this.libros = libros;
     }
 
-    public List<Revista> getRevistas() {
+    public List<Revista> obtenerRevistas() {
         return revistas;
     }
 
-    public void setRevistas(List<Revista> revistas) {
+    public void ingresarRevistas(List<Revista> revistas) {
         this.revistas = revistas;
     }
 
-    public List<CD> getCds() {
+    public List<CD> obtenerCds() {
         return cds;
     }
 
-    public void setCds(List<CD> cds) {
+    public void ingresarCds(List<CD> cds) {
         this.cds = cds;
     }
 
-    public List<DVD> getDvds() {
+    public List<DVD> obtenerDvds() {
         return dvds;
     }
 
-    public void setDvds(List<DVD> dvds) {
+    public void ingresarDvds(List<DVD> dvds) {
         this.dvds = dvds;
     }
  

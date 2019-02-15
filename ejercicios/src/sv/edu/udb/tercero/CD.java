@@ -1,17 +1,23 @@
 package sv.edu.udb.tercero;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /*Integrantes: 
 *              Jose Chinchilla
 *              Oscar Aragón
 *              Rafael Lara
 *              Daniel Choriego
 */
+@XmlRootElement(name = "cd")
 public class CD extends MaterialAudiovisual{
 
     private String artista;
     private int numCanciones;
     private int unidades;
     
+    public CD(){
+        super();
+    }
     //Constructor de la clase CD
     public CD(String codigo,String titulo,String duracion,String genero,String artista,int numCanciones,int unidades){
     super(codigo,titulo,duracion,genero);

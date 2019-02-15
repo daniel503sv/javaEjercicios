@@ -7,6 +7,7 @@ package sv.edu.udb;
 
 import javax.swing.JOptionPane;
 import sv.edu.udb.segundo.Segundo;
+import sv.edu.udb.tercero.Tercero;
 
 /**
  *
@@ -28,9 +29,10 @@ public class Ejercicios {
                 case 1://ejercicio 1
                     break;
                 case 2://ejercicio 2
-                    Segundo.main(args);
+                    Segundo.main(args); //cajero
                     break;
                 case 3://ejercicio 3
+                    Tercero.main(args); //mediateca
                     break;            
             }
         }while(seleccion!=0);

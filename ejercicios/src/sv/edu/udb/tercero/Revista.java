@@ -1,17 +1,23 @@
 
 package sv.edu.udb.tercero;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /*Integrantes: 
 *              Jose Chinchilla
 *              Oscar Aragón
 *              Rafael Lara
 *              Daniel Choriego
 */
+@XmlRootElement(name = "revista")
 public class Revista extends MaterialEscrito{
 
     private String periodicidad;
     private String fechaPub;
     
+    public Revista(){
+        super();
+    }
     //Constructor de Revista
     public Revista(String codigo,String titulo,String editorial, int unidades,String periodicidad,String fechaPub){
     super(codigo,titulo,editorial,unidades);

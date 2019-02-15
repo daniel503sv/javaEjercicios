@@ -27,6 +27,10 @@ package sv.edu.udb.tercero;
         
     }
     
+    public Material(){
+    
+    }
+    
     //Setters y getters
         public String getCodigo() {
         return codigo;

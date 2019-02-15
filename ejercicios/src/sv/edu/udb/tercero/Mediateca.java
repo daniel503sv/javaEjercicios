@@ -11,7 +11,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Stream;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -34,24 +33,24 @@ public class Mediateca {
 
     }
     
-    public Inventario getInventario() {
+    public Inventario obtenerInventario() {
         return this.inventario;
     }
 
-    public void setInventario(Inventario inventario) {
+    public void ingresarInventario(Inventario inventario) {
         this.inventario = inventario;
     }
     
-    public List<?> getListaMaterial(String tipo){  //retorna la lista del tipo solicitado
+    public List<?> obtenerListaMaterial(String tipo){  //retorna la lista del tipo solicitado
         switch(tipo.toUpperCase()){
             case Material.CD:
-                return inventario.getCds();
+                return inventario.obtenerCds();
             case Material.DVD:
-                return inventario.getDvds();
+                return inventario.obtenerDvds();
             case Material.LIBRO:
-                return inventario.getLibros();
+                return inventario.obtenerLibros();
             case Material.REVISTA:
-                return inventario.getRevistas();
+                return inventario.obtenerRevistas();
             default:
                 return new ArrayList<>(); //retorna una lista vacia si no encuentra el tipo de material
         }
@@ -61,16 +60,16 @@ public class Mediateca {
         
          switch(tipo.toUpperCase()){
             case Material.CD:
-                inventario.getCds().add((CD)material);
+                inventario.obtenerCds().add((CD)material);
                 return true;
             case Material.DVD:
-                inventario.getDvds().add((DVD)material);
+                inventario.obtenerDvds().add((DVD)material);
                 return true;
             case Material.LIBRO:
-                inventario.getLibros().add((Libro)material);
+                inventario.obtenerLibros().add((Libro)material);
                 return true;
             case Material.REVISTA:
-                inventario.getRevistas().add((Revista)material);
+                inventario.obtenerRevistas().add((Revista)material);
                 return true;
             default:
                 return false; //retorna una lista vacia si no encuentra el tipo de material

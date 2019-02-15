@@ -12,6 +12,9 @@ public class MaterialEscrito extends Material {
     private String editorial;
     private int unidades;
     
+    public MaterialEscrito(){
+        super();
+    }
     //Constructor
     public MaterialEscrito(String codigo,String titulo,String editorial,int unidades){
         super(codigo,titulo);
