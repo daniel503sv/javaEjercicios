@@ -14,6 +14,11 @@ package sv.edu.udb.tercero;
     private String codigo;
     private String titulo;
     
+    public static final String LIBRO = "LIBRO";
+    public static final String REVISTA = "REVISTA";
+    public static final String CD = "CD";
+    public static final String DVD = "DVD";
+    
     //Constructor con parametros
     public Material(String codigo, String titulo){
        
