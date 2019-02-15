@@ -2,7 +2,7 @@
 <inventario>
     <libros>
         <libro>
-            <codigo>cod01</codigo>
+            <codigo>LIB00000</codigo>
             <titulo>titulo libro</titulo>
             <editorial>editorial libro</editorial>
             <unidades>25</unidades>
@@ -12,28 +12,118 @@
             <numPaginas>500</numPaginas>
         </libro>
         <libro>
-            <codigo>cod02</codigo>
+            <codigo>LIB00001</codigo>
             <titulo>titulo libro 2</titulo>
             <editorial>editorial libro 2</editorial>
             <unidades>25</unidades>
             <anhoPub>1999</anhoPub>
             <autor>autor 2</autor>
-            <isbn>ISBN?2</isbn>
+            <isbn>ISBN?</isbn>
             <numPaginas>500</numPaginas>
         </libro>
         <libro>
-            <codigo>cod03</codigo>
-            <titulo>titulo libro 3</titulo>
-            <editorial>editorial libro 3</editorial>
+            <codigo>LIB00002</codigo>
+            <titulo>titulo libro</titulo>
+            <editorial>editorial libro</editorial>
             <unidades>25</unidades>
             <anhoPub>1999</anhoPub>
-            <autor>autor 3</autor>
-            <isbn>ISBN?3</isbn>
+            <autor>autor</autor>
+            <isbn>ISBN?</isbn>
+            <numPaginas>500</numPaginas>
+        </libro>
+        <libro>
+            <codigo>LIB00003</codigo>
+            <titulo>titulo libro 2</titulo>
+            <editorial>editorial libro 2</editorial>
+            <unidades>25</unidades>
+            <anhoPub>1999</anhoPub>
+            <autor>autor 2</autor>
+            <isbn>ISBN?</isbn>
+            <numPaginas>500</numPaginas>
+        </libro>
+        <libro>
+            <codigo>LIB00004</codigo>
+            <titulo>titulo libro</titulo>
+            <editorial>editorial libro</editorial>
+            <unidades>25</unidades>
+            <anhoPub>1999</anhoPub>
+            <autor>autor</autor>
+            <isbn>ISBN?</isbn>
+            <numPaginas>500</numPaginas>
+        </libro>
+        <libro>
+            <codigo>LIB00005</codigo>
+            <titulo>titulo libro 2</titulo>
+            <editorial>editorial libro 2</editorial>
+            <unidades>25</unidades>
+            <anhoPub>1999</anhoPub>
+            <autor>autor 2</autor>
+            <isbn>ISBN?</isbn>
+            <numPaginas>500</numPaginas>
+        </libro>
+        <libro>
+            <codigo>LIB00006</codigo>
+            <titulo>titulo libro</titulo>
+            <editorial>editorial libro</editorial>
+            <unidades>25</unidades>
+            <anhoPub>1999</anhoPub>
+            <autor>autor</autor>
+            <isbn>ISBN?</isbn>
+            <numPaginas>500</numPaginas>
+        </libro>
+        <libro>
+            <codigo>LIB00007</codigo>
+            <titulo>titulo libro 2</titulo>
+            <editorial>editorial libro 2</editorial>
+            <unidades>25</unidades>
+            <anhoPub>1999</anhoPub>
+            <autor>autor 2</autor>
+            <isbn>ISBN?</isbn>
+            <numPaginas>500</numPaginas>
+        </libro>
+        <libro>
+            <codigo>LIB00008</codigo>
+            <titulo>titulo libro</titulo>
+            <editorial>editorial libro</editorial>
+            <unidades>25</unidades>
+            <anhoPub>1999</anhoPub>
+            <autor>autor</autor>
+            <isbn>ISBN?</isbn>
+            <numPaginas>500</numPaginas>
+        </libro>
+        <libro>
+            <codigo>LIB00009</codigo>
+            <titulo>titulo libro 2</titulo>
+            <editorial>editorial libro 2</editorial>
+            <unidades>25</unidades>
+            <anhoPub>1999</anhoPub>
+            <autor>autor 2</autor>
+            <isbn>ISBN?</isbn>
+            <numPaginas>500</numPaginas>
+        </libro>
+        <libro>
+            <codigo>LIB00010</codigo>
+            <titulo>titulo libro</titulo>
+            <editorial>editorial libro</editorial>
+            <unidades>25</unidades>
+            <anhoPub>1999</anhoPub>
+            <autor>autor</autor>
+            <isbn>ISBN?</isbn>
+            <numPaginas>500</numPaginas>
+        </libro>
+        <libro>
+            <codigo>LIB00011</codigo>
+            <titulo>titulo libro 2</titulo>
+            <editorial>editorial libro 2</editorial>
+            <unidades>25</unidades>
+            <anhoPub>1999</anhoPub>
+            <autor>autor 2</autor>
+            <isbn>ISBN?</isbn>
             <numPaginas>500</numPaginas>
         </libro>
     </libros>
     <revistas/>
     <cds/>
     <dvds/>
-    <numeroCorrelativo>0</numeroCorrelativo>
+    <numeroCorrelativo>12</numeroCorrelativo>
 </inventario>

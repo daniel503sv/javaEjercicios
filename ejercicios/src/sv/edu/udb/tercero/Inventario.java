@@ -64,7 +64,7 @@ public class Inventario {
     
     public void ingresarNuevoLibro(String titulo,String editorial,int unidades,String autor,int numPaginas, String ISBN, int anioPub){
         Libro libro = new Libro(
-                "LIB"+String.format ("{%05d}", this.numeroCorrelativo++),
+                "LIB"+String.format ("%05d", this.numeroCorrelativo++),
                 titulo,
                 editorial,
                 unidades,

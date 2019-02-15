@@ -14,11 +14,24 @@ import java.util.logging.Logger;
 public class Tercero {
     public static void main(String[] args) {
         Mediateca mediateca = new Mediateca();
-        mediateca.agregarMaterial(Material.LIBRO, new Libro("cod01","titulo libro","editorial libro",25,"autor",500, "ISBN?", 1999));
-        mediateca.agregarMaterial(Material.LIBRO, new Libro("cod02","titulo libro 2","editorial libro 2",25,"autor 2",500, "ISBN?2", 1999));
-        mediateca.agregarMaterial(Material.LIBRO, new Libro("cod03","titulo libro 3","editorial libro 3",25,"autor 3",500, "ISBN?3", 1999));
         try {
-            mediateca.guardar();
+            mediateca.cargar(); //se carga el xml
+        } catch (IOException ex) { //no se pudo cargar el xml
+            System.out.println(ex);
+        }
+        
+        //creacion
+        mediateca.ingresarNuevoLibro("titulo libro","editorial libro",25,"autor",500, "ISBN?", 1999);
+        mediateca.ingresarNuevoLibro("titulo libro 2","editorial libro 2",25,"autor 2",500, "ISBN?", 1999);
+   
+        //busqueda
+        Libro libro = (Libro) mediateca.buscarMaterial("LIB00000");
+        System.out.println(libro);
+        
+        
+        
+        try {
+            mediateca.guardar(); //se guarda al xml
         } catch (IOException ex) {
             System.out.println(ex);
         }

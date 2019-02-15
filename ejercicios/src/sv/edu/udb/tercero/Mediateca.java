@@ -35,20 +35,6 @@ public class Mediateca {
 
     }
     
-    public Material crearMaterial(String tipo){
-          switch(tipo.toUpperCase()){
-            case Material.CD:
-                return inventario.obtenerCds();
-            case Material.DVD:
-                return inventario.obtenerDvds();
-            case Material.LIBRO:
-                return inventario.obtenerLibros();
-            case Material.REVISTA:
-                return inventario.obtenerRevistas();
-            default:
-                return null; //retorna una lista vacia si no encuentra el tipo de material
-        }
-    }
     public Inventario obtenerInventario() {
         return this.inventario;
     }
@@ -72,6 +58,9 @@ public class Mediateca {
         }
     }
     
+   public void ingresarNuevoLibro(String titulo,String editorial,int unidades,String autor,int numPaginas, String ISBN, int anioPub){
+       this.inventario.ingresarNuevoLibro(titulo, editorial, unidades, autor, numPaginas, ISBN, anioPub);
+   }
     
     
     public boolean agregarMaterial(Material material){
@@ -100,7 +89,8 @@ public class Mediateca {
     
     public Material buscarMaterial(String codigo){
         Material material = null;
-        switch(codigo.toUpperCase().substring(0,2)){
+        String tipo = codigo.toUpperCase().substring(0,3);
+        switch(tipo){
             case "LIB":
                 for(Libro libro:inventario.obtenerLibros()){
                     if(libro.getCodigo().equalsIgnoreCase(codigo)){

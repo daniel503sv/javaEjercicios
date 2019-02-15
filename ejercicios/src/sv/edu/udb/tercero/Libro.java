@@ -13,6 +13,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Libro extends MaterialEscrito{
 
     private String autor;
+
+    @Override
+    public String toString() {
+        return "Libro{" + "autor=" + autor + ", numPaginas=" + numPaginas + ", isbn=" + isbn + ", anhoPub=" + anhoPub + '}';
+    }
     private int numPaginas;
     private String isbn;
     private int anhoPub;
