@@ -24,12 +24,12 @@ public class Tercero {
         } catch (IOException ex) { //no se pudo cargar el xml
             System.out.println(ex);
         }
-
-        do {
-            operacion = JOptionPane.showOptionDialog(null, "Mediateca seleccione una opcion",
-                     "MEDIATECA", JOptionPane.INFORMATION_MESSAGE, JOptionPane.DEFAULT_OPTION,
-                     null, OPERACIONES, OPERACIONES[0]);
-            switch (operacion) {
+        
+        do{
+            operacion = JOptionPane.showOptionDialog(null, "Mediateca seleccione una opcion"
+                      , "MEDIATECA", JOptionPane.INFORMATION_MESSAGE, JOptionPane.DEFAULT_OPTION
+                      , null, OPERACIONES, OPERACIONES[0]);
+            switch(operacion){
                 case 0:
                     continuar = false;
                     break;
@@ -53,5 +53,4 @@ public class Tercero {
             }
         } while (continuar);
     }
-
 }

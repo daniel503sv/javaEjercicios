@@ -225,7 +225,7 @@ public class Mediateca {
     
      public void ingresarNuevoMaterial(){
          int tipoMaterial = JOptionPane.showOptionDialog(null, "Que tipo de material ingresara"
-                      , "CAJERO", JOptionPane.INFORMATION_MESSAGE, JOptionPane.DEFAULT_OPTION
+                      , "INGRESAR", JOptionPane.INFORMATION_MESSAGE, JOptionPane.DEFAULT_OPTION
                       , null, MATERIALES, MATERIALES[0]);
          
          
@@ -235,15 +235,15 @@ public class Mediateca {
                  this.ingresarLibro();
                  break;
              case 1:
-                 
+                 this.ingresarRevista();
                  break;
                  
              case 2:
-                 
+                 this.ingresarDvd();
                  break;
                  
              case 3:
-                 
+                 this.ingresarCd();
                  break;
          }
     }
@@ -266,7 +266,34 @@ public class Mediateca {
                  this.ingresarNuevoLibro(titulo, editorial, unidades, autor, paginas, isbn, paginas);
 
     }
+    private void ingresarRevista(){
+           String titulo = this.ingresarTexto("titulo");
+                 String editorial = this.ingresarTexto("editorial");
+                 String periodicidad = this.ingresarTexto("periodicidad");
+                 String fechaPub = this.ingresarTexto("fecha de publicación");
+                 int unidades = this.ingresarNumero("unidades");
+                 this.ingresarNuevaRevista(titulo,editorial,unidades,periodicidad,fechaPub);
+
+    }
     
+    private void ingresarDvd(){
+           String titulo = this.ingresarTexto("titulo");
+                 String duracion = this.ingresarTexto("duración");
+                 String genero = this.ingresarTexto("género");
+                 String director = this.ingresarTexto("director");
+                 this.ingresarNuevoDvd(titulo,duracion,genero,director);
+
+    }
+    private void ingresarCd(){
+           String titulo = this.ingresarTexto("titulo");
+                 String duracion = this.ingresarTexto("duracion");
+                 String genero = this.ingresarTexto("genero");
+                 String artista = this.ingresarTexto("artista");
+                 int numCanciones = this.ingresarNumero("número de canciones");
+                 int unidades = this.ingresarNumero("unidades");
+                 this.ingresarNuevoCd(titulo, duracion, genero, artista, numCanciones, unidades);
+
+    }
     public void mostrar(){
         Material material = this.buscarMaterial(this.ingresarTexto("Codigo"));
         if(material != null){
