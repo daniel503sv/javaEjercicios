@@ -7,6 +7,7 @@ package sv.edu.udb.tercero;
 *              Rafael Lara
 *              Daniel Choriego
 */
+
 public class Libro extends MaterialEscrito{
 
     private String autor;

@@ -1,6 +1,10 @@
 
 package sv.edu.udb.tercero;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /*Integrantes: 
 *              Jose Chinchilla
 *              Oscar Aragón
@@ -13,6 +17,10 @@ public class Tercero {
         mediateca.agregarMaterial(Material.LIBRO, new Libro("cod01","titulo libro","editorial libro",25,"autor",500, "ISBN?", 1999));
         mediateca.agregarMaterial(Material.LIBRO, new Libro("cod02","titulo libro 2","editorial libro 2",25,"autor 2",500, "ISBN?2", 1999));
         mediateca.agregarMaterial(Material.LIBRO, new Libro("cod03","titulo libro 3","editorial libro 3",25,"autor 3",500, "ISBN?3", 1999));
-        
+        try {
+            mediateca.guardar();
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
     }
 }

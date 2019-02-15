@@ -6,53 +6,75 @@
 package sv.edu.udb.tercero;
 
 import java.io.IOException;
+import java.io.StringWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
-import sv.edu.udb.segundo.Cuenta;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 
 /**
  *
  * @author josed
  */
 public class Mediateca {
-    private Map<String,List<Material>> inventario;
+
+    private Inventario inventario;
+    
     private String file;
 
     public Mediateca(){
-        this.inventario = new HashMap<>(); //mapa que guarda datos
-        this.inventario.put(Material.LIBRO, new ArrayList<>());
-        this.inventario.put(Material.REVISTA, new ArrayList<>());
-        this.inventario.put(Material.CD, new ArrayList<>());
-        this.inventario.put(Material.DVD, new ArrayList<>());
+    
+        this.file = "resources/inventario.xml";
+        this.inventario = new Inventario();
+
     }
     
-    public Map<String, List<Material>> getInventario() {
-        return inventario;
+    public Inventario getInventario() {
+        return this.inventario;
     }
 
-    public void setInventario(Map<String, List<Material>> inventario) {
+    public void setInventario(Inventario inventario) {
         this.inventario = inventario;
     }
     
-    public List<Material> getListaMaterial(String tipo){
-        if(this.inventario.containsKey(tipo.toUpperCase())){
-            return this.inventario.get(tipo.toUpperCase()); //busca la lista del tipo de material
+    public List<?> getListaMaterial(String tipo){  //retorna la lista del tipo solicitado
+        switch(tipo.toUpperCase()){
+            case Material.CD:
+                return inventario.getCds();
+            case Material.DVD:
+                return inventario.getDvds();
+            case Material.LIBRO:
+                return inventario.getLibros();
+            case Material.REVISTA:
+                return inventario.getRevistas();
+            default:
+                return new ArrayList<>(); //retorna una lista vacia si no encuentra el tipo de material
         }
-        return new ArrayList<>(); //retorna una lista vacia si no encuentra el tipo de material
     }
     
     public boolean agregarMaterial(String tipo, Material material){
         
-        if(this.inventario.containsKey(tipo.toUpperCase())){
-           this.inventario.get(tipo.toUpperCase()).add(material); //se guardo el material en la lista correspondiente
-           return true; //finalizo exitosamente
+         switch(tipo.toUpperCase()){
+            case Material.CD:
+                inventario.getCds().add((CD)material);
+                return true;
+            case Material.DVD:
+                inventario.getDvds().add((DVD)material);
+                return true;
+            case Material.LIBRO:
+                inventario.getLibros().add((Libro)material);
+                return true;
+            case Material.REVISTA:
+                inventario.getRevistas().add((Revista)material);
+                return true;
+            default:
+                return false; //retorna una lista vacia si no encuentra el tipo de material
         }
-        return false; //no se encontro el tipo de material enviado
     }
     
     public Material buscarMaterial(String codigo){
@@ -61,7 +83,8 @@ public class Mediateca {
     }
     
      public void guardar() throws IOException{
-        String datos = ""; //se unen todas las lineas del arreglo con un salto de linea
+        
+        String datos = jaxbObjectToXML(this.inventario); //se unen todas las lineas del arreglo con un salto de linea
         
         try {
             Files.write(Paths.get(this.file), datos.getBytes()); //se guarda el archivo
@@ -78,6 +101,34 @@ public class Mediateca {
             throw e; //se devuelve el error 
         } catch (Exception ex){ //cualquier otro error como parsing o archivo incorrecto
             throw ex;
+        }
+    }
+    private static String jaxbObjectToXML(Inventario inventario)
+    {
+        try
+        {
+            //Create JAXB Context
+            JAXBContext jaxbContext = JAXBContext.newInstance(Inventario.class,Material.class);
+             
+            //Create Marshaller
+            Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+ 
+            //Required formatting??
+            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+ 
+            //Print XML String to Console
+            StringWriter sw = new StringWriter();
+             
+            //Write XML to StringWriter
+            jaxbMarshaller.marshal(inventario, sw);
+             
+            //Verify XML Content
+            String xmlContent = sw.toString();
+            return xmlContent;
+ 
+        } catch (JAXBException e) {
+            System.out.println(e);
+            return "";
         }
     }
 }
