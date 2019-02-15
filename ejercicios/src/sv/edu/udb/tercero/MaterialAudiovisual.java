@@ -10,7 +10,7 @@ public class MaterialAudiovisual extends Material {
 
     private String duracion;
     private String genero;
-    
+
     public MaterialAudiovisual(){
         super();
     }

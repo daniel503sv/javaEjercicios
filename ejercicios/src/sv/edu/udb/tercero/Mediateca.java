@@ -6,12 +6,14 @@
 package sv.edu.udb.tercero;
 
 import java.io.IOException;
+import java.io.StringReader;
 import java.io.StringWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
+import javax.xml.bind.JAXB;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -55,6 +57,9 @@ public class Mediateca {
                 return new ArrayList<>(); //retorna una lista vacia si no encuentra el tipo de material
         }
     }
+    public boolean agregarMaterial(Material material){
+        return this.agregarMaterial(material.getTIPO(), material);
+    }
     
     public boolean agregarMaterial(String tipo, Material material){
         
@@ -78,6 +83,36 @@ public class Mediateca {
     
     public Material buscarMaterial(String codigo){
         Material material = null;
+        switch(codigo.toUpperCase().substring(0,2)){
+            case "LIB":
+                for(Libro libro:inventario.obtenerLibros()){
+                    if(libro.getCodigo().equalsIgnoreCase(codigo)){
+                        return libro;
+                    }
+                }
+                break;
+            case "REV":
+                for(Revista revista:inventario.obtenerRevistas()){
+                    if(revista.getCodigo().equalsIgnoreCase(codigo)){
+                        return revista;
+                    }
+                }
+                break;
+            case "CDA":
+                for(CD cd:inventario.obtenerCds()){
+                    if(cd.getCodigo().equalsIgnoreCase(codigo)){
+                        return cd;
+                    }
+                }
+                break;
+            case "DVD":
+                for(DVD dvd:inventario.obtenerDvds()){
+                    if(dvd.getCodigo().equalsIgnoreCase(codigo)){
+                        return dvd;
+                    }
+                }
+                break;
+        }
         return material;
     }
     
@@ -94,13 +129,8 @@ public class Mediateca {
      
      public void cargar() throws IOException{
         //se carga el archivo como una coleccion de las lineas
-        try (Stream<String> stream = Files.lines(Paths.get(file))) { 
-            
-        } catch (IOException e) { //error de lectura
-            throw e; //se devuelve el error 
-        } catch (Exception ex){ //cualquier otro error como parsing o archivo incorrecto
-            throw ex;
-        }
+        String xml = new String ( Files.readAllBytes( Paths.get(this.file) ) );
+        this.inventario = JAXB.unmarshal(new StringReader(xml), Inventario.class);
     }
     private static String jaxbObjectToXML(Inventario inventario)
     {

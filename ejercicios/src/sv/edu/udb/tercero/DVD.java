@@ -13,6 +13,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class DVD extends MaterialAudiovisual{
 
     private String director;
+    private static final String TIPO = Material.DVD;
+
     
     public DVD(){
         super();

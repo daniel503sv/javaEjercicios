@@ -14,9 +14,14 @@ public class CD extends MaterialAudiovisual{
     private String artista;
     private int numCanciones;
     private int unidades;
+    private static final String TIPO = Material.CD;
     
     public CD(){
         super();
+    }
+
+    public static String getTIPO() {
+        return TIPO;
     }
     //Constructor de la clase CD
     public CD(String codigo,String titulo,String duracion,String genero,String artista,int numCanciones,int unidades){

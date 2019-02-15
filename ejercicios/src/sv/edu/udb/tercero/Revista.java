@@ -14,7 +14,8 @@ public class Revista extends MaterialEscrito{
 
     private String periodicidad;
     private String fechaPub;
-    
+    private static final String TIPO = Material.REVISTA;
+
     public Revista(){
         super();
     }

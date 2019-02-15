@@ -34,13 +34,23 @@ public class Inventario {
     @XmlElementWrapper(name = "dvds") 
     @XmlElement(name = "dvd")
     private List<DVD> dvds;
-   
+
+    public int getNumeroCorrelativo() {
+        return numeroCorrelativo;
+    }
+
+    public void setNumeroCorrelativo(int numeroCorrelativo) {
+        this.numeroCorrelativo = numeroCorrelativo;
+    }
+    private int numeroCorrelativo;
+    
     public Inventario(){
    
         this.libros = new ArrayList<>();
         this.revistas = new ArrayList<>();
         this.cds = new ArrayList<>();
         this.dvds = new ArrayList<>();
+        this.numeroCorrelativo = 0;
 
     }
 
@@ -50,6 +60,32 @@ public class Inventario {
 
     public void ingresarLibros(List<Libro> libros) {
         this.libros = libros;
+    }
+    
+    public void ingresarNuevoLibro(String titulo,String editorial,int unidades,String autor,int numPaginas, String ISBN, int anioPub){
+        Libro libro = new Libro(
+                "LIB"+String.format ("{%05d}", this.numeroCorrelativo++),
+                titulo,
+                editorial,
+                unidades,
+                autor,
+                numPaginas,
+                ISBN, 
+                anioPub);
+      
+        this.libros.add(libro);
+    }
+    public void ingresarNuevaRevista(Revista revista){
+        revista.setCodigo( "LIB"+String.format ("{%05d}", this.numeroCorrelativo++));
+        this.revistas.add(revista);
+    }
+    public void ingresarNuevoCd(CD cd){
+        cd.setCodigo( "CDA"+String.format ("{%05d}", this.numeroCorrelativo++));
+        this.cds.add(cd);
+    }
+    public void ingresarNuevoDvd(DVD dvd){
+        dvd.setCodigo( "LIB"+String.format ("{%05d}", this.numeroCorrelativo++));
+        this.dvds.add(dvd);
     }
 
     public List<Revista> obtenerRevistas() {
@@ -74,6 +110,10 @@ public class Inventario {
 
     public void ingresarDvds(List<DVD> dvds) {
         this.dvds = dvds;
+    }
+    
+    public void guardarNuevoMaterial(Material material){
+        
     }
  
 }

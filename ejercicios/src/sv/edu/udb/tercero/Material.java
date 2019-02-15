@@ -18,13 +18,17 @@ package sv.edu.udb.tercero;
     public static final String REVISTA = "REVISTA";
     public static final String CD = "CD";
     public static final String DVD = "DVD";
-    
+    private static final String TIPO = "MATERIAL";
     //Constructor con parametros
     public Material(String codigo, String titulo){
        
         this.codigo = codigo;
         this.titulo = titulo;
         
+    }
+
+    public String getTIPO() {
+        return TIPO;
     }
     
     public Material(){

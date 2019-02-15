@@ -16,7 +16,8 @@ public class Libro extends MaterialEscrito{
     private int numPaginas;
     private String isbn;
     private int anhoPub;
-    
+    private static final String TIPO = Material.LIBRO;
+
     public Libro(){
         super();
     }
