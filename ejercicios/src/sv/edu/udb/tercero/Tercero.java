@@ -1,4 +1,3 @@
-
 package sv.edu.udb.tercero;
 
 import java.io.IOException;
@@ -11,14 +10,16 @@ import javax.swing.JOptionPane;
 *              Oscar Aragón
 *              Rafael Lara
 *              Daniel Choriego
-*/
+ */
 public class Tercero {
-    private static final String[] OPERACIONES = {"SALIR","AGREGAR","LISTAR","BORRAR","BUSCAR"};
+
+    private static final String[] OPERACIONES = {"SALIR", "AGREGAR", "LISTAR", "BORRAR", "BUSCAR"};
     private static Mediateca mediateca;
+
     public static void main(String[] args) {
         mediateca = new Mediateca();
         boolean continuar = true;
-        int operacion =0;
+        int operacion = 0;
 
         try {
             mediateca.cargar(); //se carga el xml
@@ -41,30 +42,17 @@ public class Tercero {
                     mediateca.listar();
                     break;
                 case 3:
-                    
+                    mediateca.borrar();
                     break;
                 case 4:
-                    
+                    mediateca.mostrar();
                     break;
             }
-        }while(continuar);
-        
-        
-        //creacion
-        //mediateca.ingresarNuevoLibro("titulo libro","editorial libro",25,"autor",500, "ISBN?", 1999);
-        //mediateca.ingresarNuevoLibro("titulo libro 2","editorial libro 2",25,"autor 2",500, "ISBN?", 1999);
-   
-        //busqueda
-        //Libro libro = (Libro) mediateca.buscarMaterial("LIB00000");
-        //mediateca.borrarMaterial("LIB00000");
-        
-        try {
-            mediateca.guardar(); //se guarda al xml
-        } catch (IOException ex) {
-            System.out.println(ex);
-        }
+            try {
+                mediateca.guardar(); //se guarda al xml
+            } catch (IOException ex) {
+                System.out.println(ex);
+            }
+        } while (continuar);
     }
-    
-   
-
 }

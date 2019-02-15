@@ -42,16 +42,6 @@
             <numPaginas>500</numPaginas>
         </libro>
         <libro>
-            <codigo>LIB00005</codigo>
-            <titulo>titulo libro 2</titulo>
-            <editorial>editorial libro 2</editorial>
-            <unidades>25</unidades>
-            <anhoPub>1999</anhoPub>
-            <autor>autor 2</autor>
-            <isbn>ISBN?</isbn>
-            <numPaginas>500</numPaginas>
-        </libro>
-        <libro>
             <codigo>LIB00006</codigo>
             <titulo>titulo libro</titulo>
             <editorial>editorial libro</editorial>
@@ -151,9 +141,19 @@
             <isbn>ISBN?</isbn>
             <numPaginas>500</numPaginas>
         </libro>
+        <libro>
+            <codigo>LIB00016</codigo>
+            <titulo>Libro prueba</titulo>
+            <editorial>editorial prueba</editorial>
+            <unidades>29</unidades>
+            <anhoPub>230</anhoPub>
+            <autor>autor del libro</autor>
+            <isbn>que es isbn</isbn>
+            <numPaginas>230</numPaginas>
+        </libro>
     </libros>
     <revistas/>
     <cds/>
     <dvds/>
-    <numeroCorrelativo>16</numeroCorrelativo>
+    <numeroCorrelativo>17</numeroCorrelativo>
 </inventario>

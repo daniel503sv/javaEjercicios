@@ -295,7 +295,20 @@ public class Mediateca {
 
     }
     public void mostrar(){
-        //Material material = this.buscarMaterial(this.)
+        Material material = this.buscarMaterial(this.ingresarTexto("Codigo"));
+        if(material != null){
+            JOptionPane.showMessageDialog(null, material);
+        }else{
+            JOptionPane.showMessageDialog(null, "material no encontrado");
+        }
+    }
+    public void borrar(){
+        
+        if(this.borrarMaterial(this.ingresarTexto("Codigo"))){
+            JOptionPane.showMessageDialog(null, "material borrado");
+        }else{
+            JOptionPane.showMessageDialog(null, "material no encontrado");
+        }
     }
     
     public void listar(){
