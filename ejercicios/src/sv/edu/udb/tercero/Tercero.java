@@ -28,7 +28,7 @@ public class Tercero {
         
         do{
             operacion = JOptionPane.showOptionDialog(null, "Mediateca seleccione una opcion"
-                      , "CAJERO", JOptionPane.INFORMATION_MESSAGE, JOptionPane.DEFAULT_OPTION
+                      , "MEDIATECA", JOptionPane.INFORMATION_MESSAGE, JOptionPane.DEFAULT_OPTION
                       , null, OPERACIONES, OPERACIONES[0]);
             switch(operacion){
                 case 0:
